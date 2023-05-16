@@ -54,7 +54,7 @@ export async function getServerSideProps({ res }) {
 	const { posts, headers: postHeaders } = await getLatestPosts(12);
 
 	const headers = [menuItemHeaders, postHeaders];
-	res.setHeader('Cache-Control', 'no-cache');
+	res.setHeader('Cache-Control', 'private');
 	setOutgoingHeaders({ headers, res });
 
 	return {
